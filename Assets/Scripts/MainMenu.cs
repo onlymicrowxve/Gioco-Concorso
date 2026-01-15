@@ -9,7 +9,6 @@ public class MainMenu : MonoBehaviour
     public GameObject optionsMenuPanel; 
     void Start()
     {
-        // Forza lo stato iniziale corretto
         mainMenuPanel.SetActive(true);
         optionsMenuPanel.SetActive(false);
     }
@@ -20,7 +19,6 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("QUIT!");
         Application.Quit();
     }
     
