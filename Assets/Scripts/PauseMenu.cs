@@ -5,6 +5,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public GameObject StaminaBar;
 
     void Update()
     {
@@ -17,6 +18,7 @@ public class PauseMenu : MonoBehaviour
             else
             {
                 Pause();
+                StaminaBar.SetActive(false);
             }
         }
     }
@@ -28,6 +30,7 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        StaminaBar.SetActive(true);
     }
 
     void Pause()
