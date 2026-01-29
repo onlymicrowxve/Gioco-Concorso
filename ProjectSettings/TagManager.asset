@@ -6,8 +6,8 @@ TagManager:
   tags:
   - PickUp
   - Door
-  - ricaricaColore
   - ArmaDaTerra
+  - Ammo
   layers:
   - Default
   - TransparentFX

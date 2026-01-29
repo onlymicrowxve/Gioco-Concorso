@@ -6,14 +6,11 @@ public class PaintBullet : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("ArmaDaTerra")) return;
 
         ContactPoint contact = collision.contacts[0];
         Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
-
-        // Crea la macchia
         GameObject splat = Instantiate(paintSplatPrefab, contact.point + contact.normal * 0.01f, Quaternion.LookRotation(contact.normal));
-        
-        // Pulizia
         Destroy(splat, 10f);
         Destroy(gameObject);
     }
