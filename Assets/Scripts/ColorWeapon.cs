@@ -33,8 +33,15 @@ public class ColorWeapon : MonoBehaviour
 
     void Update()
     {
-        if (!isHeld) return;
-
+        if (!isHeld)
+        {
+            ammoText.gameObject.SetActive(false);
+            return;
+        }
+        if(isHeld)
+        {
+            ammoText.gameObject.SetActive(true);
+        }
         if (Input.GetMouseButton(0) && Time.time >= nextTimeToFire)
         {
             if (currentAmmo > 0)

@@ -12,7 +12,7 @@ public class PickUpandDrop : MonoBehaviour
     void Update()
     {
         HandleInteraction();
-        HandleDrop();
+        //HandleDrop();
     }
 
     void HandleInteraction()
@@ -78,28 +78,28 @@ public class PickUpandDrop : MonoBehaviour
         }
     }
 
-    void HandleDrop()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if (hand.transform.childCount > 0)
-            {
-                Transform item = hand.transform.GetChild(0);
-                ColorWeapon weaponScript = item.GetComponent<ColorWeapon>();
-                if (weaponScript != null)
-                {
-                    weaponScript.isHeld = false;
-                }
+    //void HandleDrop()
+    //{
+       // if (Input.GetKeyDown(KeyCode.Q))
+        //{
+          //  if (hand.transform.childCount > 0)
+           // {
+             //   Transform item = hand.transform.GetChild(0);
+              //  ColorWeapon weaponScript = item.GetComponent<ColorWeapon>();
+              //  if (weaponScript != null)
+              //  {
+                   // weaponScript.isHeld = false;
+              //  }
 
-                item.parent = null;
+              //  item.parent = null;
 
-                Rigidbody rb = item.GetComponent<Rigidbody>();
-                if (rb != null)
-                {
-                    rb.isKinematic = false;
-                    rb.linearVelocity = playerCamera.forward * 10f;
-                }
+              //  Rigidbody rb = item.GetComponent<Rigidbody>();
+               // if (rb != null)
+               // {
+                   // rb.isKinematic = false;
+                   // rb.linearVelocity = playerCamera.forward * 10f;
+              //  }
             }
-        }
-    }
-}
+       // }
+   // }
+//}
